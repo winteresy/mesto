@@ -1,0 +1,14 @@
+.profile__plus {
+  background-image: url(../../../images/Plus.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 22px;
+  height: 22px;
+}
+@media screen and (max-width: 1000px) {
+  .profile__plus {
+    width: 16px;
+    height: 16px;
+  }
+}

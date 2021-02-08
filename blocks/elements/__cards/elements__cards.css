@@ -1,0 +1,19 @@
+.elements__cards {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-row-gap: 20px;
+  grid-column-gap: 17px;
+  width: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .elements__cards {
+    grid-template-columns: 1fr;
+    grid-column-gap: 0;
+  }
+}
