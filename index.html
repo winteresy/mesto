@@ -4,20 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="pages/index.css">
-  <title>Mesto</title>
+  <title>Место</title>
 </head>
 <body class="body">
   <div class="page">
     <header class="header"><img class="header__logo" src="images/logo.svg" alt="логотип">
-    <div class="header__line">
-    </div>
     </header>
     <main class="content">
       <section class="profile">
         <div class="profile__avatar-and-info">
           <img class="profile__avatar" src="images/Avatar.jpg" alt="аватар">
           <div class="profile__info">
-            <h2 class="profile__name">Жак-Ив Кусто</h2>
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
             <button class="profile__edit-button animation-for-links">
               <div class="profile__edit"></div>
             </button>
@@ -34,60 +32,58 @@
             <img class="element__image" src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Карачаевск">
             <div class="element__caption">
               <h2 class="element__title">Карачаевск</h2>
-              <div class="element__like animation-for-links"></div>
+              <button class="element__like animation-for-links"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="images/kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
             <div class="element__caption">
               <h2 class="element__title">Гора Эльбрус</h2>
-              <img class="element__like animation-for-links" src="images/love.svg" alt="лайк">
+              <button class="element__like animation-for-links"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="images/kirill-pershin-1556355-unsplash-1.jpg" alt="Домбай">
             <div class="element__caption">
               <h2 class="element__title">Домбай</h2>
-              <img class="element__like animation-for-links" src="images/love.svg" alt="лайк">
+              <button class="element__like animation-for-links"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="images/kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
             <div class="element__caption">
               <h2 class="element__title">Гора Эльбрус</h2>
-              <img class="element__like animation-for-links" src="images/love.svg" alt="лайк">
+              <button class="element__like animation-for-links"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="images/kirill-pershin-1556355-unsplash-1.jpg" alt="Домбай">
             <div class="element__caption">
               <h2 class="element__title">Домбай</h2>
-              <img class="element__like animation-for-links" src="images/love.svg" alt="лайк">
+              <button class="element__like animation-for-links"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Карачаево-Черкесия">
             <div class="element__caption">
               <h2 class="element__title">Карачаево-Черкесия</h2>
-              <img class="element__like animation-for-links" src="images/love.svg" alt="лайк">
+            <button class="element__like animation-for-links"></button>
             </div>
           </li>
         </ul>
       </section>
-      <section class="popup">
-        <div class="popup__container">
-          <button class="popup__close-icon animation-for-links"></button>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__input" action="index.html" method="post">
-            <input type="text" class="popup__field popup__field_name" name="kebab-case" value="Жак-Ив Кусто" required>
-            <input type="text" class="popup__field popup__field_profession" name="kebab-case" value="Исследователь океана" required>
-            <button class="popup__submit-button animation-for-links" type="submit">
-              <p class="popup__save">Сохранить</p>
-            </button>
-          </form>
-        </div>
-      </section>
     </main>
+    <section class="popup">
+      <div class="popup__container">
+        <button class="popup__close-icon animation-for-links"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__input" name="input" action="index.html" method="post">
+          <input type="text" class="popup__field popup__field_type_name" name="field_name" value="Жак-Ив Кусто" required>
+          <input type="text" class="popup__field popup__field_type_profession" name="field_profession" value="Исследователь океана" required>
+          <button class="popup__submit-button animation-for-links" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </section>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>

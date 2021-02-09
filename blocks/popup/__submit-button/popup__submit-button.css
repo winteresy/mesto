@@ -9,11 +9,19 @@
   align-items: center;
   padding: 0;
   margin-bottom: 37px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
 }
 @media screen and (max-width: 1000px) {
   .popup__submit-button {
     width: 238px;
     height: 46px;
     margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }
