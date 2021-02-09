@@ -1,5 +1,6 @@
 .animation-for-links {
   transition: opacity .5s linear;
+  cursor: pointer;
 }
 .animation-for-links:hover {
   opacity: .6;

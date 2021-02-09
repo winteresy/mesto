@@ -13,6 +13,11 @@
 }
 @media screen and (max-width: 1000px) {
   .elements__cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  .elements__cards {
     grid-template-columns: 1fr;
     grid-column-gap: 0;
   }

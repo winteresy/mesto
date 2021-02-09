@@ -1,4 +1,15 @@
 .element__image {
   width: 100%;
+  max-height: 282px;
   margin: 0;
+}
+@media screen and (max-width: 1000px) {
+  .element__image {
+    max-height: 432px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .element__image {
+    max-height: 676px;
+  }
 }
