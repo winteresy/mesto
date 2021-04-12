@@ -1,4 +1,4 @@
-.elements__cards {
+.elements__grid {
   list-style-type: none;
   padding: 0;
   display: grid;
@@ -9,15 +9,17 @@
   grid-template-rows: auto;
   grid-row-gap: 20px;
   grid-column-gap: 17px;
-  width: 100%;
+  margin: 50px auto 0;
+  width: 68.75%;
 }
 @media screen and (max-width: 1000px) {
-  .elements__cards {
+  .elements__grid {
     grid-template-columns: 1fr 1fr;
+    width: 88.13%;
   }
 }
 @media screen and (max-width: 768px) {
-  .elements__cards {
+  .elements__grid {
     grid-template-columns: 1fr;
     grid-column-gap: 0;
   }

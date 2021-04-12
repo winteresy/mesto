@@ -1,9 +1,4 @@
 .elements {
-  margin: 50px auto 0;
-  width: 68.75%;
-}
-@media screen and (max-width: 1000px) {
-  .elements {
-    width: 88.13%;
-  }
+  position: relative;
+  background-color: #000;
 }
