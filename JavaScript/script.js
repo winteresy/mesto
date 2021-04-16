@@ -86,6 +86,7 @@ const formSubmitHandlerAdd = e => {
   const item= {name: placeInput.value, link: urlInput.value};
   const element = createCard(item);
   cardlist.prepend(element);
+  formSubmitHandlerAdd.reset();
   togglePopup(popupPicture);
 }
 
