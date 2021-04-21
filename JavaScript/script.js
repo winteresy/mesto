@@ -74,7 +74,7 @@ function createCard(item) {
     popupPh.src = item.link;
     popupPh.alt = item.name;
     popupName.textContent = item.name;
-    togglePopup(popupPhoto);
+    openPopup(popupPhoto);
   };
 
   cardImage.addEventListener('click', imgClickHandler);
@@ -87,29 +87,47 @@ const formSubmitHandlerAdd = e => {
   const element = createCard(item);
   cardlist.prepend(element);
   formSubmitHandlerAdd.reset();
-  togglePopup(popupPicture);
+  closePopup(popupPicture);
 }
 
-function togglePopup(popup) {
-  popup.classList.toggle('popup_opened');
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+  document.addEventListener('keyup', handleEsc);
+  document.addEventListener('click', handleClick);
 }
-
-
-
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+  document.removeEventListener('keyup', handleEsc);
+  document.removeEventListener('click', handleClick);
+}
 
 function formSubmitHandler (evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value
     profileInfo.textContent = jobInput.value
-    togglePopup(popupProfile);
+    closePopup(popupProfile);
+}
+function handleClick(evt) {
+  if (evt.target.classList.contains("popup") || evt.target.classList.contains("popup__close-icon")) {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
+}
+
+function handleEsc(button) {
+  if (button.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
 }
 
 
-buttonEdit.addEventListener('click', () => togglePopup(popupProfile));
-buttonAdd.addEventListener('click', () => togglePopup(popupPicture), nameInput.value = profileName.textContent,
+
+buttonEdit.addEventListener('click', () => openPopup(popupProfile));
+buttonAdd.addEventListener('click', () => openPopup(popupPicture), nameInput.value = profileName.textContent,
 jobInput.value = profileInfo.textContent);
-buttonCloseProf.addEventListener('click', () => togglePopup(popupProfile));
-buttonClosePic.addEventListener('click', () => togglePopup(popupPicture));
-buttonClosePhoto.addEventListener('click', () => togglePopup(popupPhoto));
+buttonCloseProf.addEventListener('click', () => closePopup(popupProfile));
+buttonClosePic.addEventListener('click', () => closePopup(popupPicture));
+buttonClosePhoto.addEventListener('click', () => closePopup(popupPhoto));
 formElementProf.addEventListener('submit', formSubmitHandler);
 formElementPic.addEventListener('submit', formSubmitHandlerAdd);
