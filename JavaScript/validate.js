@@ -10,8 +10,6 @@ const enableValidation = (config) => {
 
 const showInputError = (config, formInput, errorMessage, errorClass, inputErrorClass) => {
   const errorElement = document.querySelector(`.${formInput.id}-error`);
-  console.log(formInput.id);
-  console.log(config.errorClass);
   errorElement.classList.add(config.errorClass);
   errorElement.textContent = errorMessage;
   formInput.classList.add(config.inputErrorClass);
