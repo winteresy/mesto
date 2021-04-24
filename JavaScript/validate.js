@@ -8,23 +8,23 @@ const enableValidation = (config) => {
   });
 };
 
-const showInputError = (config, formInput, errorMessage, errorClass, inputErrorClass) => {
-  const errorElement = document.querySelector(`.${formInput.id}-error`);
+const showInputError = (config, form, formInput, errorMessage, errorClass, inputErrorClass) => {
+  const errorElement = form.querySelector(`.${formInput.id}-error`);
   errorElement.classList.add(config.errorClass);
   errorElement.textContent = errorMessage;
   formInput.classList.add(config.inputErrorClass);
 };
-const hideInputError = (config, formInput, errorClass, inputErrorClass) => {
-  const errorElement = document.querySelector(`.${formInput.id}-error`);
+const hideInputError = (config, form, formInput, errorClass, inputErrorClass) => {
+  const errorElement = form.querySelector(`.${formInput.id}-error`);
   errorElement.classList.remove(config.errorClass);
   formInput.classList.remove(config.inputErrorClass);
   errorElement.textContent = '';
 };
-const checkInputValidity = (config, formInput) => {
+const checkInputValidity = (config, form, formInput) => {
   if (!formInput.validity.valid) {
-    showInputError(config, formInput, formInput.validationMessage);
+    showInputError(config, form, formInput, formInput.validationMessage);
   } else {
-    hideInputError(config, formInput);
+    hideInputError(config, form, formInput);
   }
 };
 const setEventListeners = (form, config, formInput) => {
@@ -33,7 +33,7 @@ const setEventListeners = (form, config, formInput) => {
   toggleButtonState(config, inputList, submitButton);
   inputList.forEach((formInput) => {
     formInput.addEventListener('input', function () {
-      checkInputValidity(config, formInput);
+      checkInputValidity(config, form, formInput);
       toggleButtonState(config, inputList, submitButton);
     });
   });

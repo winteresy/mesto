@@ -1,4 +1,3 @@
-const popup = document.querySelector('.popup');
 const popupProfile = document.querySelector('.popup_profile');
 const popupPicture = document.querySelector('.popup_picture');
 const popupPhoto = document.querySelector('.popup_photo');
@@ -87,17 +86,18 @@ const formSubmitHandlerAdd = e => {
   const element = createCard(item);
   cardlist.prepend(element);
   closePopup(popupPicture);
+  document.getElementById('formpic').reset();
 }
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keyup', handleEsc);
-  document.addEventListener('click', handleClick);
+  popup.addEventListener('click', handleClick);
 }
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keyup', handleEsc);
-  document.removeEventListener('click', handleClick);
+  popup.removeEventListener('click', handleClick);
 }
 
 function formSubmitHandler (evt) {
@@ -125,8 +125,5 @@ function handleEsc(button) {
 buttonEdit.addEventListener('click', () => openPopup(popupProfile));
 buttonAdd.addEventListener('click', () => openPopup(popupPicture), nameInput.value = profileName.textContent,
 jobInput.value = profileInfo.textContent);
-buttonCloseProf.addEventListener('click', () => closePopup(popupProfile));
-buttonClosePic.addEventListener('click', () => closePopup(popupPicture));
-buttonClosePhoto.addEventListener('click', () => closePopup(popupPhoto));
 formElementProf.addEventListener('submit', formSubmitHandler);
 formElementPic.addEventListener('submit', formSubmitHandlerAdd);
