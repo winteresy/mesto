@@ -6,6 +6,7 @@ const buttonCloseProf = document.querySelector('.popup__close-icon_profile');
 const buttonClosePic = document.querySelector('.popup__close-icon_picture');
 const buttonClosePhoto = document.querySelector('.popup__close-icon_photo');
 const buttonSave = document.querySelector('.popup__submit-button');
+const buttonSavePic = document.querySelector('.popup__submit-button_pic');
 const formElementProf = document.querySelector('.popup__input_profile');
 const formElementPic = document.querySelector('.popup__input_picture');
 const profileName = document.querySelector('.profile__name');
@@ -87,6 +88,7 @@ const formSubmitHandlerAdd = e => {
   cardlist.prepend(element);
   closePopup(popupPicture);
   document.getElementById('formpic').reset();
+  buttonSavePic.classList.add('popup__submit-button_inactive');
 }
 
 function openPopup(popup) {
